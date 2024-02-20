@@ -1,0 +1,55 @@
+.link_mesmo {
+    background-color: rgb(0, 0, 167);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: white;
+}
+a:hover {
+    background-color: rgb(181, 181, 253);
+}
+.container_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 167);
+}
+
+.photo_ufrn {
+    filter: invert();
+    background-color: yellow;
+}
+
+.title_ufrn {
+    color: white;
+}
+
+.texto_texto {
+    border: solid 1px rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloco_texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo_texto{
+    position: relative;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.escrita {
+    width: 1100px;
+}
