@@ -37,6 +37,9 @@ img {
     padding: 2%;
     margin: 2%;
     border-radius: 10px;
+    transition: transform 0.5s;
 }  
  
-
+.alternativa_filha:hover {
+    transform: scale(1.2);
+}
