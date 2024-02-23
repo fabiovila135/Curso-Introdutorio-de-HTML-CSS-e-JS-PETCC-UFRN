@@ -11,9 +11,10 @@ body {
     text-align: center;
     border-radius: 20px;
 }
-
+/*  */
 h2 {
     padding: 4%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 img {
@@ -27,10 +28,12 @@ img {
 .alternativa_pai {
     display: flex;
     justify-content: center;
-    padding: 4%;
+    padding: 1%;
 }
 
 .alternativa_filha {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:20px;
     background-color: white; 
     border: solid 2px black;   
     width: 50%;
@@ -42,4 +45,22 @@ img {
  
 .alternativa_filha:hover {
     transform: scale(1.1);
+    cursor: pointer;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    background-color: #4CAF50; /* Cor de fundo */
+    border: solid 2px black; /* Remove a borda */
+    color: white; /* Cor do texto */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 2px; /* Margem externa */
+    cursor: pointer; /* Cursor do mouse */
+    border-radius: 10px; /* Borda arredondada */
 }
