@@ -1,1 +1,42 @@
+body {
+    display: flex;
+    height: 900px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pergunta {
+    width: 500;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+h2 {
+    padding: 4%;
+}
+
+img {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 4%;
+    border-radius: 10px;
+    border: solid 2px white;
+}
+
+.alternativa_pai {
+    display: flex;
+    justify-content: center;
+    padding: 4%;
+}
+
+.alternativa_filha {
+    background-color: white; 
+    border: solid 2px black;   
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 10px;
+}  
+ 
 
