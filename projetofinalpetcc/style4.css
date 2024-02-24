@@ -22,7 +22,7 @@ img {
     height: 240px;
     margin-bottom: 4%;
     border-radius: 10px;
-    border: solid 2px white;
+    border: solid 2px rgb(0, 0, 0);
 }
 
 .alternativa_pai {
