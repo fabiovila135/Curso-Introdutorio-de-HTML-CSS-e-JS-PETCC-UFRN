@@ -64,3 +64,9 @@ img {
     cursor: pointer; /* Cursor do mouse */
     border-radius: 10px; /* Borda arredondada */
 }
+
+.destaque  {
+    background-color: rgb(170, 170, 170);
+    transform: scale(1.1);
+}
+

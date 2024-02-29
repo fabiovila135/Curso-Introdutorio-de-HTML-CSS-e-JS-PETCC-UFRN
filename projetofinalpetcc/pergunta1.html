@@ -30,15 +30,17 @@
                 <img src="imagens/Taylor_Swift_Álbum.jpg">
             </div>
             <div class="alternativa_pai">
-                    <button class="alternativa_filha" id="resposta" onclick="myFunction()"> Fearless </button>
-                    <button class="alternativa_filha" id="resposta" onclick="myFunction()"> Debut </button>
+                <button class="alternativa_filha" id="resposta1" onclick="selecionarAlternativa(this);">Fearless</button>
+                <button class="alternativa_filha" id="resposta2" onclick="selecionarAlternativa(this);">Debut</button>
             </div>
             <div class="alternativa_pai">
-                <div class="alternativa_filha" id="resposta3"> Picture To Burn </div>
-                <div class="alternativa_filha" id="resposta4"> Speak Now </div>
-            </div> <p class="resposta" id="answer"></p> <div>
-            <input type="button" class="botao" value="Submeter" onclick="enviarInformacoes()">
+                <button class="alternativa_filha" id="resposta3" onclick="selecionarAlternativa(this);">Picture to Burn</button>
+                <button class="alternativa_filha" id="resposta4" onclick="selecionarAlternativa(this);">Speak Now</button>
             </div>
+                <p> Selecionado: </p>
+                <div id="resp"> </div>
+            <br>
+            <input type="button" class="botao" id="botao" value="Submeter" onclick="comparar()">
         </div>    
     </main>
 </body>
