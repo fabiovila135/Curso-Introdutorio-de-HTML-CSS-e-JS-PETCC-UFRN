@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz da Taylor Swift </title>
+    <link href="estiloGeral.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="imagens/taylor.png">
+    <style>
+        body {
+            background-color: rgb(158, 17, 17);
+        }
+
+        h2{
+            color: white
+        }
+
+        .pergunta {
+            background-color: maroon ;
+            border: solid 2px black;
+        }
+
+        .botao {
+            background-color: rgb(77, 0, 0); /* Cor de fundo */
+            border: solid 2px black; /* Remove a borda */
+            color: white; /* Cor do texto */
+        }
+        
+    </style>
+
+    <script> 
+    let perguntasAcertadas = localStorage.getItem('perguntasAcertadas')
+
+        function comparar() {
+            let q1 = document.querySelector('input[name="pergunta"]:checked')
+            
+            if(q1) {
+                if (q1.value === "a") {
+                    alert("Resposta Correta!");
+                    perguntasAcertadas++;
+                } else {
+                    alert("Resposta incorreta!");
+                }
+            } else {
+                alert("Pelo amor de Taylor Swift, responda a pergunta!");
+                return;
+            }
+
+            document.getElementById("a").classList.add("correta");
+            document.getElementById("b").classList.add("incorreta");
+            document.getElementById("c").classList.add("incorreta");
+            document.getElementById("d").classList.add("incorreta");
+
+            document.getElementById("link").classList.remove("escondido");
+
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.disabled = true;
+            });
+
+            localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div class="pergunta";>
+            <div class="titulo"><h2> A Taylor Swift está na jornada de regravar seus álbuns antigos. Quantos ela vai regravar no total e quantos ela já regravou? </h2> </div>
+            <div class="foto">
+                <img src="imagens/regravacoes.png" style="height: 400px;">
+            </div>
+            <div class="alternativa_pai">
+                <div class="alternativa_filha" id="a" > <div> 6 e 4 </div> <div> <input type="radio" name="pergunta" value="a"> </div> </div>
+                <div class="alternativa_filha" id="b"> <div > 6 e 3 </div> <div> <input type="radio" name="pergunta" value="b" > </div> </div>
+            </div>
+            <div class="alternativa_pai">
+                <div class="alternativa_filha" id="c" > <div> 3 e 3 </div> <div> <input type="radio" name="pergunta"   value="c"> </div> </div>
+                <div class="alternativa_filha" id="d" > <div> 11 e 6 </div> <div> <input type="radio" name="pergunta" value="d" > </div> </div>
+            </div>
+            <input type="button" class="botao" id="botao" value="Submeter" onclick="comparar()">
+        </div>
+        <br> <a href="pag_final_quiz.html" id="link" class="escondido">Finalizar Quiz</a> 
+    </main>
+</body>
+</html>

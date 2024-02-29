@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz da Taylor Swift </title>
+    <link href="estiloGeral.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="imagens/taylor.png">
+    <style>
+        body {
+            background-color: palegoldenrod;
+        }
+
+        h2{
+            color: black
+        }
+
+        .pergunta {
+            background-color: rgb(240, 231, 130) ;
+            border: solid 2px black;
+        }
+
+        .botao {
+            background-color: yellow; /* Cor de fundo */
+            border: solid 2px black; /* Remove a borda */
+            color: black; /* Cor do texto */
+        }
+        
+    </style>
+
+    <script> 
+    let perguntasAcertadas = localStorage.getItem('perguntasAcertadas')
+
+        function comparar() {
+            let q1 = document.querySelector('input[name="pergunta"]:checked')
+            
+            if(q1) {
+                if (q1.value === "c") {
+                    alert("Resposta Correta!");
+                    perguntasAcertadas++;
+                } else {
+                    alert("Resposta incorreta!");
+                }
+            } else {
+                alert("Pelo amor de Taylor Swift, responda a pergunta!");
+                return;
+            }
+
+            document.getElementById("a").classList.add("incorreta");
+            document.getElementById("b").classList.add("incorreta");
+            document.getElementById("c").classList.add("correta");
+            document.getElementById("d").classList.add("incorreta");
+
+            document.getElementById("link").classList.remove("escondido");
+
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.disabled = true;
+            });
+
+            localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div class="pergunta";>
+            <div class="titulo"><h2> A Taylor Swift fez shows no Brasil em NOV/2023. Por quais cidades ela passou? </h2> </div>
+            <div class="foto">
+                <img src="imagens/taylorcrist.png">
+            </div>
+            <div class="alternativa_pai">
+                <div class="alternativa_filha" id="a" > <div> Natal e Salvador </div> <div> <input type="radio" name="pergunta" value="a"> </div> </div>
+                <div class="alternativa_filha" id="b"> <div > RJ e Porto Alegre </div> <div> <input type="radio" name="pergunta" value="b" > </div> </div>
+            </div>
+            <div class="alternativa_pai">
+                <div class="alternativa_filha" id="c" > <div> SP e RJ </div> <div> <input type="radio" name="pergunta"   value="c"> </div> </div>
+                <div class="alternativa_filha" id="d" > <div> Curitiba e SP </div> <div> <input type="radio" name="pergunta" value="d" > </div> </div>
+            </div>
+            <input type="button" class="botao" id="botao" value="Submeter" onclick="comparar()">
+        </div>
+        <br> <a href="pergunta5.html" id="link" class="escondido">Próxima Pergunta</a> 
+    </main>
+</body>
+</html>

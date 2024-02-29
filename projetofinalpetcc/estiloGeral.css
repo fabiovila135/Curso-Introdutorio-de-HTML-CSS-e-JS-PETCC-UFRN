@@ -1,3 +1,16 @@
+a {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    font-size: 20px;
+    margin: auto;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 1%;
+    width: 30%;
+}
+
 body {
     display: flex;
     height: 900px;
@@ -6,19 +19,13 @@ body {
 }
 
 .pergunta {
-    width: 500;
+    width: 500px;
     margin: 0 auto;
     text-align: center;
     border-radius: 20px;
 }
-/*  */
-h2 {
-    padding: 4%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
 
 img {
-    width: 240px;
     height: 240px;
     margin-bottom: 4%;
     border-radius: 10px;
@@ -41,32 +48,37 @@ img {
     margin: 2%;
     border-radius: 10px;
     transition: transform 0.5s;
+    align-items: center;
+    justify-content: center;
 }  
  
 .alternativa_filha:hover {
     transform: scale(1.1);
-    cursor: pointer;
 }
+
 
 .botao {
     display: flex;
     justify-content: center;
     padding: 5%;
-    background-color: #004103; /* Cor de fundo */
-    border: solid 2px black; /* Remove a borda */
-    color: white; /* Cor do texto */
-    padding: 15px 32px; /* Espaçamento interno */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Remove sublinhado */
-    display: inline-block; /* Exibe como bloco */
-    font-size: 16px; /* Tamanho da fonte */
-    margin: 4px 2px; /* Margem externa */
-    cursor: pointer; /* Cursor do mouse */
-    border-radius: 10px; /* Borda arredondada */
+    padding: 15px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 10px; 
 }
 
-.destaque  {
-    background-color: rgb(170, 170, 170);
-    transform: scale(1.1);
+.escondido {
+    display: none;
 }
 
+.correta {
+    background-color: rgb(100, 255, 100) ;
+}
+
+.incorreta {
+    background-color: rgb(255, 100, 100);
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz da Taylor Swift </title>
+    <link rel="icon" type="image/x-icon" href="imagens/taylor.png">
+    <link href="estiloGeral.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            height: 900px;
+            align-items: center;
+        }
+
+        .container {
+            background-color: palevioletred;
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        img {
+            margin: 4%;
+            border: solid 2px white;
+            transition: transform 0.5s;
+            border-radius: 10px;
+        }
+
+        img:hover {
+            transform: scale(1.25);
+        }
+
+        .link {
+            width: 50%;
+            font-size: 50px;
+            margin: auto;
+            padding-bottom: 5%;
+            padding-top: 2%;
+        }
+
+        @keyframes blink {
+            0% { color: yellow;}
+            100% { color: red; }
+        }
+
+        a {
+            animation: blink 0.2s infinite;
+        }
+
+        a:hover {
+            background-color: rgb(0, 255, 234);
+        }
+
+        h1 {
+            margin-bottom: 4%;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        
+    </style>
+
+    <script>
+        function resultado() {
+            let perguntasAcertadas = localStorage.getItem('perguntasAcertadas');
+            alert('Você acertou ' + perguntasAcertadas + ' perguntas!');
+            if (perguntasAcertadas >= 3) {
+                exibirImagemGanhou();
+                exibirTextoGanhou();
+            } else {
+                exibirImagemPerdeu();
+                exibirTextoPerdeu();
+            }
+            document.getElementById("link_refazer").classList.remove("escondido");
+        }
+
+        function exibirImagemGanhou() {
+            let imagem = document.getElementById('imagem');
+            let novaImagem = "imagens/ganhou.png";
+            imagem.src = novaImagem;
+        }
+
+        function exibirTextoGanhou() {
+            let texto1 = document.getElementById('texto1');
+            let novoTexto1 = "Você SALVOU a Taylor Swift!";
+            texto1.innerText = novoTexto1;
+
+            let botao = document.getElementById("botao");
+            botao.classList.add("escondido");
+        }
+
+        function exibirImagemPerdeu() {
+            let imagem = document.getElementById('imagem');
+            let novaImagem = "imagens/perdeu.png";
+            imagem.src = novaImagem;
+        }
+
+        function exibirTextoPerdeu() {
+            let texto1 = document.getElementById('texto1');
+            let novoTexto1 = "Você NÃO SALVOU a Taylor Swift!";
+            texto1.innerText = novoTexto1;
+
+            let texto2 = document.getElementById('texto2');
+            let novoTexto2 = "Por SUA culpa, ela vai viver sob custódia do Kanye West!";
+            texto2.innerText = novoTexto2;
+
+            let texto3 = document.getElementById('texto3');
+            let novoTexto3 = "E agora os Swifties estão indo atrás de você! CORRA!";
+            texto3.innerText = novoTexto3;
+
+            let botao = document.getElementById("botao");
+            botao.classList.add("escondido");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="imagens/duvida.png" width=350px height=240px id="imagem">
+        <div class="texto">
+            <h1 id="texto1"> A Taylor Swift está em <u>PERIGO</u>!</h1>
+            <h2 id="texto2"> Mas você fez esse quiz na tentativa de salvá-la </h2>
+            <h2 id="texto3"> Achas que conseguiste? </h2>
+            <button onclick="resultado()" id="botao" style="margin: 3%; padding: 1%; border-radius: 10px; background-color: pink;" > Confira aqui seus acertos!</button>
+            <a href="pag_inicial_quiz.html" class="escondido" id="link_refazer">Refaça o Quiz!</a>
+        </div>
+</body>
+</html>

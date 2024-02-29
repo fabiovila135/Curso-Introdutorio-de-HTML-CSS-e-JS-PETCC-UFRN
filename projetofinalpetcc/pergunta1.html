@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Quiz da Taylor Swift </title>
-    <link href="style4.css" rel="stylesheet" />
+    <link href="estiloGeral.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="imagens/taylor.png">
-    <script src="ex4.js" ></script>
+    <script src="codigoGeral.js" ></script>
     <style>
         body {
             background-color: rgb(0, 182, 0);
@@ -20,7 +20,47 @@
             background-color: green;
             border: solid 2px black;
         }
+
+        .botao {
+            background-color: #004103;
+            border: solid 2px black;
+            color: white;
+        }
     </style>
+
+    <script> 
+        let perguntasAcertadas = localStorage.getItem('perguntasAcertadas')
+            function comparar() {
+                let q1 = document.querySelector('input[name="pergunta"]:checked')
+                
+                if(q1) {
+                    if (q1.value === "d") {
+                        alert("Resposta Correta!");
+                        perguntasAcertadas++;
+                    } else {
+                        alert("Resposta incorreta!");
+                    }
+                } else {
+                    alert("Pelo amor de Taylor Swift, responda a pergunta!");
+                    return;
+                }
+
+                document.getElementById("a").classList.add("incorreta");
+                document.getElementById("b").classList.add("incorreta");
+                document.getElementById("c").classList.add("incorreta");
+                document.getElementById("d").classList.add("correta");
+
+                document.getElementById("link").classList.remove("escondido");
+
+                var radios = document.querySelectorAll('input[type="radio"]');
+                radios.forEach(function(radio) {
+                    radio.disabled = true;
+                });
+
+                localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+                document.getElementById("myButton").classList.add("escondido");
+            }
+    </script>
 </head>
 <body>
     <main>
@@ -30,18 +70,16 @@
                 <img src="imagens/Taylor_Swift_Álbum.jpg">
             </div>
             <div class="alternativa_pai">
-                <button class="alternativa_filha" id="resposta1" onclick="selecionarAlternativa(this);">Fearless</button>
-                <button class="alternativa_filha" id="resposta2" onclick="selecionarAlternativa(this);">Debut</button>
+                <div class="alternativa_filha" id="a" > <div> Fearless </div> <div> <input type="radio" name="pergunta" value="a"> </div> </div>
+                <div class="alternativa_filha" id="b"> <div > Debut </div> <div> <input type="radio" name="pergunta" value="b" > </div> </div>
             </div>
             <div class="alternativa_pai">
-                <button class="alternativa_filha" id="resposta3" onclick="selecionarAlternativa(this);">Picture to Burn</button>
-                <button class="alternativa_filha" id="resposta4" onclick="selecionarAlternativa(this);">Speak Now</button>
+                <div class="alternativa_filha" id="c" > <div> Picture to Burn </div> <div> <input type="radio" name="pergunta"   value="c"> </div> </div>
+                <div class="alternativa_filha" id="d" > <div> Speak Now </div> <div> <input type="radio" name="pergunta" value="d" > </div> </div>
             </div>
-                <p> Selecionado: </p>
-                <div id="resp"> </div>
-            <br>
-            <input type="button" class="botao" id="botao" value="Submeter" onclick="comparar()">
-        </div>    
+            <input type="button" class="botao" id="myButton" value="Submeter" onclick="comparar()">
+        </div>
+        <br> <a href="pergunta2.html" id="link" class="escondido">Próxima Pergunta</a> 
     </main>
 </body>
 </html>
