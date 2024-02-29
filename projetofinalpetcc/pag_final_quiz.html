@@ -52,7 +52,7 @@
         }
 
         a:hover {
-            background-color: rgb(0, 255, 234);
+            background-color: pink;
         }
 
         h1 {
@@ -91,6 +91,14 @@
             let novoTexto1 = "Você SALVOU a Taylor Swift!";
             texto1.innerText = novoTexto1;
 
+            let texto2 = document.getElementById('texto2');
+            let novoTexto2 = "Agora ela está LIVRE das garras da Kim Kardashian e do Kanye West!";
+            texto2.innerText = novoTexto2;
+
+            let texto3 = document.getElementById('texto3');
+            let novoTexto3 = "Os swifties agradecem eternamente pela sua contribuição <3"
+            texto3.innerText = novoTexto3;
+
             let botao = document.getElementById("botao");
             botao.classList.add("escondido");
         }
@@ -126,8 +134,9 @@
             <h1 id="texto1"> A Taylor Swift está em <u>PERIGO</u>!</h1>
             <h2 id="texto2"> Mas você fez esse quiz na tentativa de salvá-la </h2>
             <h2 id="texto3"> Achas que conseguiste? </h2>
-            <button onclick="resultado()" id="botao" style="margin: 3%; padding: 1%; border-radius: 10px; background-color: pink;" > Confira aqui seus acertos!</button>
-            <a href="pag_inicial_quiz.html" class="escondido" id="link_refazer">Refaça o Quiz!</a>
+            <button onclick="resultado()" id="botao" style="margin: 4%; padding: 1%; border-radius: 10px; background-color: pink;">Confira aqui seus acertos!</button>
         </div>
+        <a href="pag_inicial_quiz.html" class="escondido" id="link_refazer" style="width: 150px;" >Refaça o Quiz!</a>
+    </div>
 </body>
 </html>

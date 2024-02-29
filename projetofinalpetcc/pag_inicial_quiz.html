@@ -59,7 +59,7 @@
         
         @keyframes grow {
             0% { font-size: 20px; }
-            50% { font-size: 50px; }
+            50% { font-size: 80px; }
             100% { font-size: 20px; }
         }
         
@@ -70,8 +70,11 @@
     </style>
 
     <script>
-        let perguntasAcertadas = 0;
-        localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+        function comeca() {
+            let perguntasAcertadas = 0;
+            localStorage.setItem('perguntasAcertadas', perguntasAcertadas); 
+        }
+        
     </script>
 </head>
 <body>
@@ -81,10 +84,11 @@
         <div class="texto">
             <h1> A Taylor Swift está em <u>PERIGO</u>!</h1>
             <p> Achas que tens o que é necessário para resgatá-la?</p>
-            <p> Responda essa série de perguntas para! </p>
+            <p> Responda essa série de perguntas para salvá-la! </p>
         </div>
         <div class="link">
-        <a href="pergunta1.html" class="link_quiz">CLIQUE AQUI</a>
+        <a onclick="comeca()" href="pergunta1.html" class="link_quiz" ()">CLIQUE AQUI</a>
+        
         </div>
     </div>
 </body>

@@ -30,36 +30,35 @@
 
     <script> 
         let perguntasAcertadas = localStorage.getItem('perguntasAcertadas')
-            function comparar() {
-                let q1 = document.querySelector('input[name="pergunta"]:checked')
-                
-                if(q1) {
-                    if (q1.value === "d") {
-                        alert("Resposta Correta!");
-                        perguntasAcertadas++;
-                    } else {
-                        alert("Resposta incorreta!");
-                    }
+        function comparar() {
+            let q1 = document.querySelector('input[name="pergunta"]:checked')   
+            if(q1) {
+                if (q1.value === "d") {
+                    alert("Resposta Correta!");
+                    perguntasAcertadas = 1;
                 } else {
-                    alert("Pelo amor de Taylor Swift, responda a pergunta!");
-                    return;
+                    alert("Resposta incorreta!");
                 }
-
-                document.getElementById("a").classList.add("incorreta");
-                document.getElementById("b").classList.add("incorreta");
-                document.getElementById("c").classList.add("incorreta");
-                document.getElementById("d").classList.add("correta");
-
-                document.getElementById("link").classList.remove("escondido");
-
-                var radios = document.querySelectorAll('input[type="radio"]');
-                radios.forEach(function(radio) {
-                    radio.disabled = true;
-                });
-
-                localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
-                document.getElementById("myButton").classList.add("escondido");
+            } else {
+                alert("Pelo amor de Taylor Swift, responda a pergunta!");
+                return;
             }
+
+            document.getElementById("a").classList.add("incorreta");
+            document.getElementById("b").classList.add("incorreta");
+            document.getElementById("c").classList.add("incorreta");
+            document.getElementById("d").classList.add("correta");
+
+            document.getElementById("link").classList.remove("escondido");
+
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.disabled = true;
+            });
+
+            localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+            document.getElementById("myButton").classList.add("escondido");
+        }
     </script>
 </head>
 <body>
@@ -77,9 +76,10 @@
                 <div class="alternativa_filha" id="c" > <div> Picture to Burn </div> <div> <input type="radio" name="pergunta"   value="c"> </div> </div>
                 <div class="alternativa_filha" id="d" > <div> Speak Now </div> <div> <input type="radio" name="pergunta" value="d" > </div> </div>
             </div>
-            <input type="button" class="botao" id="myButton" value="Submeter" onclick="comparar()">
+            <input type="button" class="botao" id="botao" value="Submeter" onclick="comparar()">
         </div>
         <br> <a href="pergunta2.html" id="link" class="escondido">Próxima Pergunta</a> 
+        <input type="button" value="teste" onclick="teste()">
     </main>
 </body>
 </html>
